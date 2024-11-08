@@ -45,6 +45,14 @@ public class EmployeeController {
                 (existingEmployee.getPassportNumber().equals(employee.getPassportNumber())) {
                     return "Error: Duplicate passport number!";
                 }
+                 if
+                (existingEmployee.getEmail().equals(employee.getEmail())) {
+                    return "Error: Duplicate email!";
+                }
+                 if
+                 (existingEmployee.getAge() < 18) {
+                    return "Error: Employee must be at least 18 years old!";
+                }
             }
             employees.add(employee);
             mapper.writeValue(employeeFile, employees);
